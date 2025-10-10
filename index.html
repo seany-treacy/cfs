@@ -53,6 +53,35 @@
       color: #0078D7;
     }
 
+    /* Burger Icon */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 25px;
+      height: 18px;
+      justify-content: space-between;
+    }
+
+    .menu-toggle span {
+      display: block;
+      height: 3px;
+      background: #333;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* Mobile nav open animation */
+    .menu-toggle.active span:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
+    }
+
     /* Hero Section */
     .hero {
       position: relative;
@@ -241,27 +270,26 @@
     /* Responsive */
     @media (max-width: 768px) {
       header {
-        flex-direction: column;
+        flex-wrap: wrap;
+      }
+
+      nav {
+        width: 100%;
+        display: none;
+      }
+
+      nav.active {
+        display: block;
       }
 
       nav ul {
         flex-direction: column;
         align-items: center;
+        padding: 10px 0;
       }
 
-      .hero-text h1 {
-        font-size: 2em;
-      }
-
-      .promotions {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+      .menu-toggle {
+        display: flex;
       }
     }
   </style>
@@ -271,7 +299,12 @@
   <!-- HEADER -->
   <header>
     <div class="logo">Core Facilities Solutions</div>
-    <nav>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="navbar">
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
@@ -283,8 +316,8 @@
 
   <!-- HERO -->
   <section class="hero">
-	      <div class="hero-overlay"></div>
-	      <div class="hero-text">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
       <h1>Add a title here&nbsp;</h1>
       <p>Add an intro here</p>
       <a href="#">Add a link&nbsp;</a>
@@ -299,12 +332,12 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra eget enim rutrum rhoncus</p>
     </div>
     <div class="promo-item">
-      <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?_gl=1*14mk5ph*_ga*MTExOTc0NTM5My4xNzYwMDk0MzQz*_ga_8JE65Q40S6*czE3NjAwOTQzNDMkbzEkZzEkdDE3NjAwOTU1MTEkajU1JGwwJGgw" alt="Electrical Panels">
+      <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg" alt="Electrical Panels">
       <h3>Promo 2</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra eget enim rutrum rhoncus</p>
     </div>
     <div class="promo-item">
-      <img src="https://media.istockphoto.com/id/1217234823/photo/3d-rendering-of-a-kitchen-bay-and-dining-area-in-living-room.jpg?s=2048x2048&w=is&k=20&c=vdhZ2ElpC_AuSLxA88eLsoVx-geJLKSy-L5XKNRNgJg=" alt="Installation Services">
+      <img src="https://media.istockphoto.com/id/1217234823/photo/3d-rendering-of-a-kitchen-bay-and-dining-area-in-living-room.jpg" alt="Installation Services">
       <h3>Promo 3</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra eget enim rutrum rhoncus</p>
     </div>
@@ -339,8 +372,20 @@
       </div>
     </div>
     <div class="footer-bottom">
-    &copy; 2025 CFS Electricals Ltd. All Rights Reserved.</div>
+      &copy; 2025 CFS Electricals Ltd. All Rights Reserved.
+    </div>
   </footer>
+
+  <!-- Burger Menu Script -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navbar.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>
