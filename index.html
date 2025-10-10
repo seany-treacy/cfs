@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElectroPro | Electrical Supply & Installation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      color: #333;
+      background-color: #fff;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #0078D7;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #0078D7;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 70vh;
+      background: url('https://images.pexels.com/photos/7245368/pexels-photo-7245368.jpeg?_gl=1*1pr3lyg*_ga*MTExOTc0NTM5My4xNzYwMDk0MzQz*_ga_8JE65Q40S6*czE3NjAwOTQzNDMkbzEkZzEkdDE3NjAwOTUyNTckajU5JGwwJGgw') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+
+    .hero-text {
+      position: relative;
+      text-align: center;
+      color: white;
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+
+    .hero-text p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+
+    .hero-text a {
+      background-color: #0078D7;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .hero-text a:hover {
+      background-color: #005a9e;
+    }
+
+    /* Promoted Items */
+    .promotions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 60px 20px;
+      gap: 30px;
+      background-color: #f9f9f9;
+    }
+
+    .promo-item {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      max-width: 320px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .promo-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .promo-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .promo-item h3 {
+      font-size: 1.2em;
+      margin: 15px 0 5px;
+    }
+
+    .promo-item p {
+      padding: 0 15px 20px;
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background-color: #0078D7;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .contact-section form {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-section input,
+    .contact-section textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      width: 100%;
+    }
+
+    .contact-section textarea {
+      height: 150px;
+      resize: none;
+    }
+
+    .contact-section button {
+      background-color: #fff;
+      color: #0078D7;
+      font-weight: bold;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-section button:hover {
+      background-color: #e6e6e6;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #222;
+      color: #ccc;
+      padding: 40px 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 30px;
+    }
+
+    .footer-logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #0078D7;
+    }
+
+    .footer-contact {
+      font-size: 0.95em;
+      line-height: 1.8;
+    }
+
+    .footer-contact p {
+      margin-bottom: 8px;
+    }
+
+    .footer-logo-img {
+      max-width: 150px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.85em;
+      margin-top: 30px;
+      border-top: 1px solid #444;
+      padding-top: 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-text h1 {
+        font-size: 2em;
+      }
+
+      .promotions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Core Facilities Solutions</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Sectors</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+	      <div class="hero-overlay"></div>
+	      <div class="hero-text">
+      <h1>Add a title here&nbsp;</h1>
+      <p>Add an intro here</p>
+      <a href="#">Add a link&nbsp;</a>
+    </div>
+  </section>
+
+  <!-- PROMOTIONS -->
+  <section class="promotions">
+    <div class="promo-item">
+      <img src="https://media.gettyimages.com/id/2151912560/photo/electrician-installing-a-power-outlet-while-remodeling-a-house.jpg?s=2048x2048&w=gi&k=20&c=lUrxGQADPrG_ifDEU9lBuJp0zik-qbOISj4vsPVgrKM=" alt="LED Lighting">
+      <h3>Promo 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra eget enim rutrum rhoncus</p>
+    </div>
+    <div class="promo-item">
+      <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?_gl=1*14mk5ph*_ga*MTExOTc0NTM5My4xNzYwMDk0MzQz*_ga_8JE65Q40S6*czE3NjAwOTQzNDMkbzEkZzEkdDE3NjAwOTU1MTEkajU1JGwwJGgw" alt="Electrical Panels">
+      <h3>Promo 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra eget enim rutrum rhoncus</p>
+    </div>
+    <div class="promo-item">
+      <img src="https://media.istockphoto.com/id/1217234823/photo/3d-rendering-of-a-kitchen-bay-and-dining-area-in-living-room.jpg?s=2048x2048&w=is&k=20&c=vdhZ2ElpC_AuSLxA88eLsoVx-geJLKSy-L5XKNRNgJg=" alt="Installation Services">
+      <h3>Promo 3</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra eget enim rutrum rhoncus</p>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="phone" placeholder="Phone Number" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <div class="footer-logo">⚡Core Facilities Solutions</div>
+        <p>Electrical Supply & Installation Experts</p>
+      </div>
+      <div class="footer-contact">
+        <p><strong>📞 Telephone:</strong> 01234 567890</p>
+        <p><strong>✉️ Email:</strong> info@cfs-electrical.co.uk</p>
+        <p><strong>📍 Address:</strong> 123 Power Avenue, London, UK</p>
+      </div>
+      <div>
+        <img src="https://i0.wp.com/greenergrowth.co.uk/wp-content/uploads/Seal-Colour-Alcumus-SafeContractor-1.png?fit=2434%2C2434&ssl=1" alt="Safe Contractor Approved" class="footer-logo-img">
+      </div>
+    </div>
+    <div class="footer-bottom">
+    &copy; 2025 CFS Electricals Ltd. All Rights Reserved.</div>
+  </footer>
+
+</body>
+</html>
