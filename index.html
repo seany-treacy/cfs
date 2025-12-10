@@ -101,4 +101,135 @@ header {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  overflow:
+  overflow: hidden;
+  max-width: 320px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.promo-item:hover {
+  transform: translateY(-5px);
+}
+
+.promo-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #E44692;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: #ccc;
+  padding: 40px 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2em;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <img src="images/cfs-logo-narrow.svg" alt="Core Facilities Solutions Logo" class="logo-img" style="width:300px">
+</header>
+
+<!-- HERO WITH VIDEO -->
+<section class="hero">
+  
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline>
+    <source src="images/istockphoto-2205039420-640_adpp_is.mp4" type="video/mp4">
+  </video>
+
+  <!-- Dark overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Text -->
+  <div class="hero-text">
+    <h1>Core Facilities Solutions&nbsp;</h1>
+    <p>The FM's wholesale solution&nbsp;</p>
+  </div>
+
+</section>
+
+<!-- PROMOTIONS -->
+<section class="promotions">
+  <div class="promo-item">
+    <img src="https://media.gettyimages.com/id/2151912560/photo/electrician-installing-a-power-outlet-while-remodeling-a-house.jpg?s=2048x2048&w=gi&k=20&c=lUrxGQADPrG_ifDEU9lBuJp0zik-qbOISj4vsPVgrKM=" alt="LED Lighting">
+    <h3>Who we are</h3>
+    <p>Add a short intro about who we are....</p>
+  </div>
+
+  <div class="promo-item">
+    <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg" alt="Electrical Panels">
+    <h3>Our Services</h3>
+    <p>Our services include Electrical, Mechanical, HVAC,&nbsp;Plumbing Supplies and more.</p>
+  </div>
+
+  <div class="promo-item">
+    <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg" alt="Electrical Panels">
+    <h3>Lighting upgrades &amp; refurbishments</h3>
+    <p>TM65 &amp; TM66 specialists</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section">
+  <h2>Contact Us</h2>
+
+  <form action="https://formspree.io/f/xzznajdr" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Type your message here......" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <div>
+      <div class="footer-logo">
+        <img src="images/cfs-logo-narrow-white.png" alt="Core Facilities Solutions Logo" class="footer-logo-img">
+      </div>
+      <p>Electrical Supply &amp; Installation Experts</p>
+    </div>
+
+    <div class="footer-contact">
+      <p><strong>📞 Telephone:</strong> 0208 153 0076</p>
+      <p><strong>✉️ Email:</strong> <a href="mailto:sales@cfs.ltd">sales@cfs.ltd</a></p>
+      <p><strong>📍 Address:</strong> CEME Innovation Centre, Workshop 8, Rainham, Essex, RM13 8EU</p>
+    </div>
+
+    <div>
+      <img src="images/safe-supplier-verified-logo.png" alt="Safe Contractor Approved" class="footer-logo-img">
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 Core Facilities Solutions. All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>
