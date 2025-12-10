@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="https://use.typekit.net/ixy7nbi.css">
+<link rel="stylesheet" href="https://use.typekit.net/ixy7nbi.css">
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Core Facilities Solutions | Electrical Supply &amp; Installation</title>
-  <style>
-    * {
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Core Facilities Solutions | Electrical Supply & Installation</title>
+
+<style>
+	* {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-	font-family: "alternate-gothic-atf", sans-serif; font-weight: 500;
-font-style: normal;    
-	  }
+      font-family: "alternate-gothic-atf", sans-serif; 
+      font-weight: 500;
+      font-style: normal;
+    }
 
     body {
       color: #333;
       background-color: #fff;
     }
 
-    /* Header */
+    /* HEADER */
     header {
       display: flex;
       justify-content: space-between;
@@ -33,37 +35,24 @@ font-style: normal;
       z-index: 1000;
     }
 
-    .logo {
-      font-size: 1.5em;
-      font-weight: bold;
-      color: #E44692;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: #834896;
-    }
-
-    /* Hero Section */
+    /* HERO WITH VIDEO */
     .hero {
       position: relative;
       height: 70vh;
-      background: url('https://images.pexels.com/photos/7245368/pexels-photo-7245368.jpeg?_gl=1*1pr3lyg*_ga*MTExOTc0NTM5My4xNzYwMDk0MzQz*_ga_8JE65Q40S6*czE3NjAwOTQzNDMkbzEkZzEkdDE3NjAwOTUyNTckajU5JGwwJGgw') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
     }
 
     .hero-overlay {
@@ -72,7 +61,8 @@ font-style: normal;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.45);
+      z-index: -1;
     }
 
     .hero-text {
@@ -93,20 +83,7 @@ font-style: normal;
       margin-bottom: 20px;
     }
 
-    .hero-text a {
-      background-color: #E44692;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-
-    .hero-text a:hover {
-      background-color: #834896;
-    }
-
-    /* Promoted Items */
+    /* PROMOTIONS */
     .promotions {
       display: flex;
       flex-wrap: wrap;
@@ -136,18 +113,7 @@ font-style: normal;
       object-fit: cover;
     }
 
-    .promo-item h3 {
-      font-size: 1.2em;
-      margin: 15px 0 5px;
-    }
-
-    .promo-item p {
-      padding: 0 15px 20px;
-      font-size: 0.95em;
-      color: #555;
-    }
-
-    /* Contact Section */
+    /* CONTACT SECTION */
     .contact-section {
       background-color: #E44692;
       color: white;
@@ -183,8 +149,8 @@ font-style: normal;
     }
 
     .contact-section button {
-      background-color: #834896;
-      color: #E44692;
+      background-color: #530883;
+      color: #fff !important;
       font-weight: bold;
       border: none;
       padding: 12px;
@@ -194,10 +160,10 @@ font-style: normal;
     }
 
     .contact-section button:hover {
-      background-color: #E44692;
+      background-color: #834896;
     }
 
-    /* Footer */
+    /* FOOTER */
     footer {
       background-color: #222;
       color: #ccc;
@@ -225,14 +191,6 @@ font-style: normal;
       line-height: 1.8;
     }
 
-    .footer-contact p {
-      margin-bottom: 8px;
-    }
-
-    .footer-logo-img {
-      max-width: 150px;
-    }
-
     .footer-bottom {
       text-align: center;
       font-size: 0.85em;
@@ -241,24 +199,23 @@ font-style: normal;
       padding-top: 15px;
     }
 
-    /* Responsive */
+    /* GLOBAL LINK COLOUR FIX */
+    footer a,
+    footer a:visited,
+    footer a:active {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    /* RESPONSIVE FIXES */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
-      }
-
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .hero-text h1 {
-        font-size: 2em;
-      }
-
-      .promotions {
-        flex-direction: column;
-        align-items: center;
+        gap: 15px;
       }
 
       .footer-container {
@@ -266,92 +223,94 @@ font-style: normal;
         align-items: center;
         text-align: center;
       }
+
+      .hero-text h1 {
+        font-size: 2em;
+      }
     }
-	  <link rel="stylesheet" href="https://use.typekit.net/ixy7nbi.css">
-  </style>
+
+</style>
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header>
-	
-
-	
-    <img src="images/cfs-logo-narrow.svg" alt="Core Facilities Solutions Logo" class="logo-img" style="width:300px"
-    width: 300px;>
-
+<!-- HEADER -->
+<header>
+  <img src="images/cfs-logo-narrow.svg" alt="Core Facilities Solutions Logo" class="logo-img" style="width:300px">
 </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Welcome to Core Facilities Solutions&nbsp;</h1>
-      <p>Add an intro here</p>
-    </div>
-  </section>
+<!-- HERO WITH VIDEO -->
+<section class="hero">
+  <video autoplay muted loop playsinline>
+    <source src="images/istockphoto-2205039420-640_adpp_is.mp4" type="video/mp4">
+  </video>
 
-  <!-- PROMOTIONS -->
-  <section class="promotions">
-    <div class="promo-item">
-      <img src="https://media.gettyimages.com/id/2151912560/photo/electrician-installing-a-power-outlet-while-remodeling-a-house.jpg?s=2048x2048&w=gi&k=20&c=lUrxGQADPrG_ifDEU9lBuJp0zik-qbOISj4vsPVgrKM=" alt="LED Lighting">
-      <h3>Who we are</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra eget enim rutrum rhoncus</p>
-    </div>
-    <div class="promo-item">
-      <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?_gl=1*14mk5ph*_ga*MTExOTc0NTM5My4xNzYwMDk0MzQz*_ga_8JE65Q40S6*czE3NjAwOTQzNDMkbzEkZzEkdDE3NjAwOTU1MTEkajU1JGwwJGgw" alt="Electrical Panels">
-      <h3>What we do&nbsp; &nbsp;&nbsp;</h3>
-	  <p>We offer a range of services including:</p>
-<ul>
-	<li>Lighting design</li>
-	<li>LED upgrades and conversions</li>
-	<li>Tool &amp; Equipment hire</li>
-	<li>Tool calibration and Waste removal</li>
-		</br></i></ul>
+  <div class="hero-overlay"></div>
 
-	  </div>
-    <div class="promo-item">
-      <img src="https://media.istockphoto.com/id/1217234823/photo/3d-rendering-of-a-kitchen-bay-and-dining-area-in-living-room.jpg?s=2048x2048&w=is&k=20&c=vdhZ2ElpC_AuSLxA88eLsoVx-geJLKSy-L5XKNRNgJg=" alt="Installation Services">
-      <h3>Sectors</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra eget enim rutrum rhoncus</p>
-    </div>
-  </section>
-
-  <!-- CONTACT FORM -->
-  <section class="contact-section">
-    <h2>Contact Us</h2>
-	  <a href="mailto:mail@mymail.com?subject=Enquery&body=Name%0APhone%0AMessage">
-  Send Email
-</a>
-    <form>
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="text" name="phone" placeholder="Phone Number" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-container">
-      <div>
-  <div class="footer-logo">
-    <img src="images/cfs-logo-narrow-white.png" alt="Core Facilities Solutions Logo" class="footer-logo-img">
+  <div class="hero-text">
+    <h1>Core Facilities Solutions&nbsp;</h1>
+    <p>The FM's wholesale solution&nbsp;</p>
   </div>
-  <p>Electrical Supply & Installation Experts</p>
-</div>
-      <div class="footer-contact">
-        <p><strong>📞 Telephone:</strong> 01234 567890</p>
-        <p><strong>✉️ Email:</strong> info@cfs-electrical.co.uk</p>
-        <p><strong>📍 Address:</strong> 123 Power Avenue, London, UK</p>
+</section>
+
+<!-- PROMOTIONS -->
+<section class="promotions">
+  <div class="promo-item">
+    <img src="https://media.gettyimages.com/id/2151912560/photo/electrician-installing-a-power-outlet-while-remodeling-a-house.jpg?s=2048x2048&w=gi&k=20&c=lUrxGQADPrG_ifDEU9lBuJp0zik-qbOISj4vsPVgrKM=" alt="LED Lighting">
+    <h3>Who we are</h3>
+    <p>Add a short intro about who we are....</p>
+  </div>
+
+  <div class="promo-item">
+    <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg" alt="Electrical Panels">
+    <h3>Our Services</h3>
+    <p>Our services include Electrical, Mechanical, HVAC,&nbsp;Plumbing Supplies and more.</p>
+  </div>
+
+  <div class="promo-item">
+    <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg" alt="Electrical Panels">
+    <h3>Lighting upgrades &amp; refurbishments</h3>
+    <p>TM65 &amp; TM66 specialists</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section">
+  <h2>Contact Us</h2>
+
+  <form action="https://formspree.io/f/xzznajdr" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Type your message here......" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <div>
+      <div class="footer-logo">
+        <img src="images/cfs-logo-narrow-white.png" alt="Core Facilities Solutions Logo" class="footer-logo-img">
       </div>
-      <div>
-        <img src="https://i0.wp.com/greenergrowth.co.uk/wp-content/uploads/Seal-Colour-Alcumus-SafeContractor-1.png?fit=2434%2C2434&ssl=1" alt="Safe Contractor Approved" class="footer-logo-img">
-      </div>
+      <p>Electrical Supply &amp; Installation Experts</p>
     </div>
-    <div class="footer-bottom">
-    &copy; 2025 CFS Electricals Ltd. All Rights Reserved.</div>
-  </footer>
+
+    <div class="footer-contact">
+      <p><strong>📞 Telephone:</strong> 0208 153 0076</p>
+      <p><strong>✉️ Email:</strong> <a href="mailto:sales@cfs.ltd">sales@cfs.ltd</a></p>
+      <p><strong>📍 Address:</strong> <a href="https://maps.app.goo.gl/Vq1VBvzEBVqJACjs5">CEME Innovation Centre, Workshop 8, Rainham, Essex, RM13 8EU</a></p>
+    </div>
+
+    <div>
+      <img src="/images/safe-supplier-verified-logo.png" alt="Safe Contractor Approved" class="footer-logo-img">
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 Core Facilities Solutions. All Rights Reserved.
+  </div>
+</footer>
 
 </body>
 </html>
