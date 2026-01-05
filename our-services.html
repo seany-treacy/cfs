@@ -137,10 +137,13 @@
     width: 100%;
     height: 200px;
     object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: all 0.3s ease;
   }
 
   .promo-item h3 {
-    margin: 20px 10px 10px;
+    margin: 15px 10px 10px;
     font-size: 1.4rem;
   }
 
@@ -199,11 +202,21 @@
     .promotions {
       grid-template-columns: repeat(2, 1fr);
     }
+
+    .promo-item img {
+      height: 180px;       /* slightly smaller on tablets */
+    }
   }
 
   @media (max-width: 600px) {
     .promotions {
       grid-template-columns: 1fr;
+    }
+
+    .promo-item img {
+      height: auto;        /* scale naturally */
+      max-height: 200px;   /* never exceed original size */
+      object-fit: contain;  /* show full image without cropping */
     }
   }
 </style>
@@ -267,13 +280,13 @@
 
   <div class="promo-item">
     <img src="images/Icons-9-Desk.png" alt="">
-    <h3>Office equipment</h3>
+    <h3>Office Equipment</h3>
     <p>Text to be added</p>
   </div>
 
   <div class="promo-item">
     <img src="images/Icons-17-Cleaning.png" alt="">
-    <h3>Soft services</h3>
+    <h3>Soft Services</h3>
     <p>Text to be added</p>
   </div>
 
@@ -283,12 +296,13 @@
     <p>Text to be added</p>
   </div>
 	
-	 <div class="promo-item">
+  <div class="promo-item">
     <img src="images/Icons-25-recycling.png" alt="">
     <h3>Waste Removal</h3>
     <p>Text to be added</p>
   </div>
-		 <div class="promo-item">
+
+  <div class="promo-item">
     <img src="images/Icons-29-Fridge.png" alt="">
     <h3>White Goods</h3>
     <p>Text to be added</p>
