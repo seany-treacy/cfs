@@ -20,30 +20,29 @@ body {
   color: #333;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header {
-  display: flex;
-  justify-content: center;
-  padding: 15px 40px;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .header-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 40px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  justify-content: space-between;
 }
 
 header img {
   width: 280px;
 }
 
-/* NAV */
+/* ================= NAV ================= */
 .main-nav {
   display: flex;
   gap: 12px;
@@ -60,7 +59,36 @@ header img {
   color: #E44692;
 }
 
-/* HERO */
+/* Burger */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 28px;
+  height: 3px;
+  background: #E44692;
+}
+
+/* Mobile Nav */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+
+.mobile-nav a {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+  color: #333;
+}
+
+/* ================= HERO ================= */
 .hero {
   position: relative;
   height: 60vh;
@@ -87,19 +115,21 @@ header img {
 }
 
 .hero-text {
+  position: relative;
   color: #fff;
   text-align: center;
 }
 
 .hero-text h1 {
   font-size: 2.7rem;
+  margin-bottom: 10px;
 }
 
 .hero-text p {
   font-size: 1.25rem;
 }
 
-/* CONTENT */
+/* ================= CONTENT ================= */
 .content {
   max-width: 1100px;
   margin: 60px auto;
@@ -119,7 +149,7 @@ header img {
   color: #555;
 }
 
-/* VALUES */
+/* ================= VALUES ================= */
 .values {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -145,12 +175,17 @@ header img {
   font-size: 1rem;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
 .contact-section {
   background: #E44692;
   color: #fff;
   padding: 60px 20px;
   text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .contact-section form {
@@ -173,6 +208,10 @@ header img {
   border: none;
 }
 
+.contact-section textarea {
+  min-height: 140px;
+}
+
 .contact-section button {
   padding: 12px;
   background: #530883;
@@ -180,9 +219,15 @@ header img {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-/* FOOTER */
+.contact-section button:hover {
+  background: #834896;
+}
+
+/* ================= FOOTER ================= */
 footer {
   background: #222;
   color: #ccc;
@@ -192,14 +237,35 @@ footer {
 .footer-container {
   max-width: 1200px;
   margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: space-between;
 }
 
-.footer-container img {
+.footer-desktop {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-logo img {
   width: 180px;
+}
+
+.footer-safe img {
+  width: 140px;
+}
+
+.footer-info p {
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.footer-mobile-top,
+.footer-core-mobile {
+  display: none;
+}
+
+.footer-core-mobile img {
+  width: 160px;
+  margin-bottom: 10px;
 }
 
 .footer-bottom {
@@ -210,9 +276,29 @@ footer {
   padding-top: 15px;
 }
 
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .main-nav { display: none; }
+  .burger { display: flex; }
+}
+
 @media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 2rem;
+  .hero-text h1 { font-size: 2rem; }
+
+  .footer-desktop { display: none; }
+  .footer-mobile-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-core-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
   }
 }
 </style>
@@ -223,14 +309,27 @@ footer {
 <header>
   <div class="header-inner">
     <img src="images/cfs-logo-narrow.svg" alt="Core Facilities Solutions">
+
     <nav class="main-nav">
       <a href="/index.html">Home</a> |
       <a href="/who-are-we.html">Who Are We</a> |
       <a href="/our-services.html">Our Services</a> |
-            <a href="/lighting-upgrades.html">Lighting Upgrades</a> |
+      <a href="/lighting-upgrades.html">Lighting Upgrades</a> |
       <a href="#contact">Contact</a>
     </nav>
+
+    <div class="burger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
   </div>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="/index.html">Home</a>
+    <a href="/who-are-we.html">Who Are We</a>
+    <a href="/our-services.html">Our Services</a>
+    <a href="/lighting-upgrades.html">Lighting Upgrades</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <section class="hero">
@@ -303,26 +402,53 @@ footer {
 
 <footer>
   <div class="footer-container">
-    <div>
-      <img src="images/cfs-logo-narrow-white.png" alt="Core Facilities Solutions logo">
+
+    <div class="footer-desktop">
+      <div class="footer-logo">
+        <img src="images/cfs-logo-narrow-white.png" alt="Core Facilities Solutions Logo">
+        <p>Electrical Supply & Installation Experts</p>
+      </div>
+
+      <div class="footer-info">
+        <p>📞 0208 153 0076</p>
+        <p>✉️ sales@cfs.ltd</p>
+        <p>📍 CEME Innovation Centre, Rainham, Essex</p>
+      </div>
+
+      <div class="footer-safe">
+        <img src="images/safe-supplier-verified-logo.png" alt="Safe Supplier Verified">
+      </div>
+    </div>
+
+    <div class="footer-mobile-top">
+      <div class="footer-info">
+        <p>📞 0208 153 0076</p>
+        <p>✉️ sales@cfs.ltd</p>
+        <p>📍 CEME Innovation Centre, Rainham, Essex</p>
+      </div>
+      <div class="footer-safe">
+        <img src="images/safe-supplier-verified-logo.png" alt="Safe Supplier Verified">
+      </div>
+    </div>
+
+    <div class="footer-core-mobile">
+      <img src="images/cfs-logo-narrow-white.png" alt="Core Facilities Solutions Logo">
       <p>Electrical Supply & Installation Experts</p>
     </div>
 
-    <div>
-      <p>📞 0208 153 0076</p>
-      <p>✉️ <a href="mailto:sales@cfs.ltd">sales@cfs.ltd</a></p>
-      <p>📍 CEME Innovation Centre, Rainham, Essex</p>
+    <div class="footer-bottom">
+      &copy; 2025 Core Facilities Solutions. All Rights Reserved.
     </div>
 
-    <div>
-      <img src="images/safe-supplier-verified-logo.png" alt="Safe Supplier Verified">
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    © 2025 Core Facilities Solutions. All Rights Reserved.
   </div>
 </footer>
+
+<script>
+function toggleNav() {
+  const nav = document.getElementById("mobileNav");
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+}
+</script>
 
 </body>
 </html>
