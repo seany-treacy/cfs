@@ -3,250 +3,216 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Core Facilities Solutions | Electrical Supply & Installation</title>
+<title>Core Facilities Solutions | FM Wholesale & Electrical Supply</title>
 <link rel="stylesheet" href="https://use.typekit.net/ixy7nbi.css">
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "alternate-gothic-atf", sans-serif;
-    font-weight: 500;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "alternate-gothic-atf", sans-serif;
+  font-weight: 500;
+}
 
-  body {
-    background: #fff;
-    color: #333;
-  }
+body {
+  background: #fff;
+  color: #333;
+}
 
-  /* HEADER */
-  header {
-    display: flex;
-    justify-content: center;
-    padding: 15px 40px;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
+/* HEADER */
+header {
+  display: flex;
+  justify-content: center;
+  padding: 15px 40px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-  .header-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
 
-  header img {
-    width: 280px;
-  }
+header img {
+  width: 280px;
+}
 
-  /* NAVIGATION */
-  .main-nav {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-  }
+/* NAV */
+.main-nav {
+  display: flex;
+  gap: 12px;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
 
-  .main-nav a {
-    text-decoration: none;
-    color: #333;
-    transition: 0.3s ease;
-  }
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+}
 
-  .main-nav a:hover {
-    color: #E44692;
-  }
+.main-nav a:hover {
+  color: #E44692;
+}
 
-  /* HERO */
-  .hero {
-    position: relative;
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
+/* HERO */
+.hero {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
-  .hero video {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2;
-  }
+.hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
 
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    z-index: -1;
-  }
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: -1;
+}
 
-  .hero-text {
-    color: white;
-    text-align: center;
-    padding: 20px;
-  }
+.hero-text {
+  color: #fff;
+  text-align: center;
+}
 
+.hero-text h1 {
+  font-size: 2.7rem;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+}
+
+/* HOME PROMOS */
+.home-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 60px 40px;
+  background: #f9f9f9;
+}
+
+.home-links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.promo-item {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promo-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.promo-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.promo-item h3 {
+  margin: 20px 0 10px;
+  font-size: 1.4rem;
+}
+
+.promo-item p {
+  padding: 0 20px 20px;
+  font-size: 1rem;
+}
+
+/* CONTACT */
+.contact-section {
+  background: #E44692;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-section form {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-section label {
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.contact-section input,
+.contact-section textarea {
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+}
+
+.contact-section button {
+  padding: 12px;
+  background: #530883;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  background: #222;
+  color: #ccc;
+  padding: 50px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.footer-container img {
+  width: 180px;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+}
+
+@media (max-width: 768px) {
   .hero-text h1 {
-    font-size: 2.7rem;
-    margin-bottom: 15px;
-  }
-
-  .hero-text p {
-    font-size: 1.25rem;
-  }
-
-  /* PROMOTIONS */
-  .promotions {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    padding: 60px 20px;
-    background: #f9f9f9;
-  }
-
-  .promo-item {
-    background: #fff;
-    max-width: 320px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: 0.3s ease;
-    text-align: center;
-    padding-bottom: 20px;
-  }
-
-  .promo-item:hover {
-    transform: translateY(-5px);
-  }
-
-  .promo-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-
-  .promo-item h3 {
-    margin: 20px 0 10px;
-    font-size: 1.4rem;
-  }
-
-  .promo-item p {
-    padding: 0 20px;
-    font-size: 1rem;
-  }
-
-  /* CONTACT */
-  .contact-section {
-    background: #E44692;
-    color: #fff;
-    padding: 60px 20px;
-    text-align: center;
-  }
-
-  .contact-section h2 {
     font-size: 2rem;
-    margin-bottom: 20px;
   }
-
-  .contact-section form {
-    max-width: 700px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .contact-section input,
-  .contact-section textarea {
-    border: none;
-    border-radius: 5px;
-    padding: 12px;
-    font-size: 1rem;
-  }
-
-  .contact-section button {
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    background: #530883;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  .contact-section button:hover {
-    background: #834896;
-  }
-
-  /* FOOTER */
-  footer {
-    background: #222;
-    color: #ccc;
-    padding: 50px 20px;
-  }
-
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
-  }
-
-  .footer-logo img {
-    width: 180px;
-  }
-
-  .footer-info p {
-    line-height: 1.8;
-    font-size: 0.95rem;
-  }
-
-  footer a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  footer a:hover {
-    color: #fff;
-  }
-
-  .footer-bottom {
-    margin-top: 30px;
-    text-align: center;
-    padding-top: 15px;
-    border-top: 1px solid #444;
-    font-size: 0.85rem;
-  }
-
-  @media (max-width: 768px) {
-    .hero-text h1 {
-      font-size: 2rem;
-    }
-
-    .main-nav {
-      flex-wrap: wrap;
-      justify-content: center;
-      font-size: 0.9rem;
-    }
-
-    .footer-container {
-      flex-direction: column;
-      text-align: center;
-      align-items: center;
-    }
-  }
+}
 </style>
 </head>
 
@@ -255,15 +221,11 @@
 <header>
   <div class="header-inner">
     <img src="images/cfs-logo-narrow.svg" alt="Core Facilities Solutions">
-
     <nav class="main-nav">
-      <a href="#">Home</a>
-      <span>|</span>
-      <a href="#who-we-are">Who are we</a>
-      <span>|</span>
-      <a href="/our-services.html">Our Services</a>
-      <span>|</span>
-      <a href="#contact">Contact Us</a>
+      <a href="/index.html">Home</a> |
+      <a href="/about.html">Who are we</a> |
+      <a href="/our-services.html">Our Services</a> |
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -273,65 +235,80 @@
     <source src="images/istockphoto-2205039420-640_adpp_is.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
-
   <div class="hero-text">
-    <h1>Core Facilities Solutions</h1>
-    <p>The FM's wholesale solution</p>
+    <h1>Facilities Management Wholesale & Electrical Supply</h1>
+    <p>The FM industry’s one-stop solution</p>
   </div>
 </section>
 
-<section class="promotions" id="services">
-  <div class="promo-item" id="who-we-are">
-    <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg" alt="Who we are">
-    <h3>Who are we&nbsp; &nbsp; &nbsp;</h3>
-    <p>Click here for an insight into one of the fastest growing independent wholesalers!</p>
-  </div>
+<section class="home-links">
+  <a href="/about.html">
+    <div class="promo-item">
+      <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg"
+           alt="Core Facilities Solutions team and warehouse"
+           loading="lazy">
+      <h3>Who are we</h3>
+      <p>Learn more about one of the UK’s fastest growing independent wholesalers</p>
+    </div>
+  </a>
 
-  <div class="promo-item">
-    <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg" alt="Electrical Panels">
-    <h3>Our Services</h3>
-    <p>Click here to see how we supply the FM industry!</p>
-  </div>
+  <a href="/our-services.html">
+    <div class="promo-item">
+      <img src="images/Icons-5-electrical-pink.png"
+           alt="Facilities management services"
+           loading="lazy">
+      <h3>Our Services</h3>
+      <p>See how we support facilities management teams nationwide</p>
+    </div>
+  </a>
 
-  <div class="promo-item">
-    <img src="images/Icons-46-Lighting-icon.png" alt="Lighting upgrades">
-    <h3>Lighting upgrades & refurbishments</h3>
-    <p>Click here for all things lighting!&nbsp; including</p>
-    <p>TM65 &amp; TM66 specialists</p>
-  </div>
+  <a href="/lighting.html">
+    <div class="promo-item">
+      <img src="images/Icons-46-Lighting-icon.png"
+           alt="Lighting upgrades and refurbishments"
+           loading="lazy">
+      <h3>Lighting Upgrades</h3>
+      <p>TM65 & TM66 compliant lighting refurbishments</p>
+    </div>
+  </a>
 </section>
 
 <section class="contact-section" id="contact">
   <h2>Contact Us</h2>
-
   <form action="https://formspree.io/f/xzznajdr" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Type your message here…" required></textarea>
+    <label for="name">Your Name</label>
+    <input id="name" name="name" type="text" required>
+
+    <label for="email">Your Email</label>
+    <input id="email" name="email" type="email" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required></textarea>
+
     <button type="submit">Send Message</button>
   </form>
 </section>
 
 <footer>
   <div class="footer-container">
-    <div class="footer-logo">
-      <img src="images/cfs-logo-narrow-white.png" alt="Core Facilities Solutions Logo">
-      <p style="margin-top:10px;">Electrical Supply & Installation Experts</p>
+    <div>
+      <img src="images/cfs-logo-narrow-white.png" alt="Core Facilities Solutions logo">
+      <p>Electrical Supply & Installation Experts</p>
     </div>
 
-    <div class="footer-info">
-      <p><strong>📞 Telephone:</strong> 0208 153 0076</p>
-      <p><strong>✉️ Email:</strong> <a href="mailto:sales@cfs.ltd">sales@cfs.ltd</a></p>
-      <p><strong>📍 Address:</strong> <a href="https://maps.app.goo.gl/Vq1VBvzEBVqJACjs5">CEME Innovation Centre, Workshop 8, Rainham, Essex, RM13 8EU</a></p>
+    <div>
+      <p>📞 0208 153 0076</p>
+      <p>✉️ <a href="mailto:sales@cfs.ltd">sales@cfs.ltd</a></p>
+      <p>📍 CEME Innovation Centre, Rainham, Essex</p>
     </div>
 
-    <div class="footer-logo">
+    <div>
       <img src="images/safe-supplier-verified-logo.png" alt="Safe Supplier Verified">
     </div>
   </div>
 
   <div class="footer-bottom">
-    &copy; 2025 Core Facilities Solutions. All Rights Reserved.
+    © 2025 Core Facilities Solutions. All Rights Reserved.
   </div>
 </footer>
 
