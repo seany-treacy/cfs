@@ -53,6 +53,11 @@ header img {
   color: #333;
 }
 
+.main-nav a:hover {
+  color: #E44692;
+}
+
+/* Burger */
 .burger {
   display: none;
   flex-direction: column;
@@ -63,9 +68,10 @@ header img {
 .burger span {
   width: 28px;
   height: 3px;
-  background: #333;
+  background: #E44692;
 }
 
+/* Mobile Nav */
 .mobile-nav {
   display: none;
   flex-direction: column;
@@ -84,6 +90,9 @@ header img {
 .hero {
   position: relative;
   height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero video {
@@ -102,12 +111,18 @@ header img {
 
 .hero-text {
   position: relative;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-text h1 {
+  font-size: 2.7rem;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
 }
 
 /* ================= PROMOTIONS ================= */
@@ -120,12 +135,84 @@ header img {
   padding: 60px 20px;
 }
 
+.promo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.promo-item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 20px 15px 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.promo-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+}
+
+.promo-item h3 {
+  margin: 15px 0 10px;
+  font-size: 1.4rem;
+}
+
+.promo-item p {
+  font-size: 1rem;
+  margin-top: auto;
+}
+
 /* ================= CONTACT ================= */
 .contact-section {
   background: #E44692;
   color: #fff;
   padding: 60px 20px;
   text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-section form {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-section label {
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.contact-section input,
+.contact-section textarea {
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.contact-section textarea {
+  min-height: 140px;
+}
+
+.contact-section button {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background: #530883;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /* ================= FOOTER ================= */
@@ -140,7 +227,6 @@ footer {
   margin: auto;
 }
 
-/* Desktop footer */
 .footer-desktop {
   display: flex;
   justify-content: space-between;
@@ -151,29 +237,17 @@ footer {
   width: 180px;
 }
 
-.footer-info p {
-  line-height: 1.8;
-}
-
 .footer-safe img {
   width: 140px;
 }
 
-/* Mobile footer */
-.footer-mobile-top {
-  display: none;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+.footer-info p {
+  line-height: 1.8;
 }
 
-/* ✅ FIXED: force vertical stacking */
+.footer-mobile-top,
 .footer-core-mobile {
   display: none;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-top: 30px;
 }
 
 .footer-core-mobile img {
@@ -183,6 +257,7 @@ footer {
 
 .footer-bottom {
   text-align: center;
+  font-size: 0.85rem;
   margin-top: 30px;
   border-top: 1px solid #444;
   padding-top: 15px;
@@ -190,22 +265,32 @@ footer {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
-  .main-nav {
-    display: none;
-  }
-  .burger {
-    display: flex;
-  }
+  .main-nav { display: none; }
+  .burger { display: flex; }
+}
+
+@media (max-width: 900px) {
+  .promotions { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .footer-desktop {
-    display: none;
+  .promotions { grid-template-columns: 1fr; }
+
+  .footer-desktop { display: none; }
+
+  .footer-mobile-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
   }
 
-  .footer-mobile-top,
   .footer-core-mobile {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
   }
 }
 </style>
@@ -250,12 +335,42 @@ footer {
   </div>
 </section>
 
+<!-- ✅ PROMOTIONS RESTORED -->
+<section class="promotions">
+  <a href="/who-are-we.html" class="promo-link">
+    <div class="promo-item">
+      <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg">
+      <h3>Who Are We</h3>
+      <p>Click here for an insight into one of the fastest growing independent wholesalers!</p>
+    </div>
+  </a>
+
+  <a href="/our-services.html" class="promo-link">
+    <div class="promo-item">
+      <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg">
+      <h3>Our Services</h3>
+      <p>Click here to see how we supply the FM industry!</p>
+    </div>
+  </a>
+
+  <a href="/lighting-upgrades.html" class="promo-link">
+    <div class="promo-item">
+      <img src="images/Icons-46-Lighting-icon.png">
+      <h3>Lighting upgrades & refurbishments</h3>
+      <p>Click here for all things lighting! including TM65 & TM66 specialists</p>
+    </div>
+  </a>
+</section>
+
 <section class="contact-section" id="contact">
   <h2>Contact Us</h2>
   <form action="https://formspree.io/f/xzznajdr" method="POST">
-    <input name="name" placeholder="Your Name" required>
-    <input name="email" type="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Message" required></textarea>
+    <label>Your Name</label>
+    <input name="name" required>
+    <label>Your Email</label>
+    <input type="email" name="email" required>
+    <label>Message</label>
+    <textarea name="message" required></textarea>
     <button type="submit">Send Message</button>
   </form>
 </section>
@@ -263,7 +378,6 @@ footer {
 <footer>
   <div class="footer-container">
 
-    <!-- Desktop -->
     <div class="footer-desktop">
       <div class="footer-logo">
         <img src="images/cfs-logo-narrow-white.png">
@@ -281,14 +395,12 @@ footer {
       </div>
     </div>
 
-    <!-- Mobile -->
     <div class="footer-mobile-top">
       <div class="footer-info">
         <p>📞 0208 153 0076</p>
         <p>✉️ sales@cfs.ltd</p>
         <p>📍 CEME Innovation Centre, Rainham, Essex</p>
       </div>
-
       <div class="footer-safe">
         <img src="images/safe-supplier-verified-logo.png">
       </div>
