@@ -12,7 +12,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "alternate-gothic-atf", sans-serif;
-  font-weight: 500;
 }
 
 body {
@@ -20,56 +19,71 @@ body {
   color: #333;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header {
-  display: flex;
-  justify-content: center;
-  padding: 15px 40px;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .header-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 40px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  justify-content: space-between;
 }
 
 header img {
   width: 280px;
 }
 
-/* NAVIGATION */
+/* ================= NAV ================= */
 .main-nav {
   display: flex;
-  align-items: center;
   gap: 12px;
   font-size: 0.95rem;
-  letter-spacing: 1px;
 }
 
 .main-nav a {
   text-decoration: none;
   color: #333;
-  transition: 0.3s ease;
 }
 
-.main-nav a:hover {
-  color: #E44692;
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
 }
 
-/* HERO */
+.burger span {
+  width: 28px;
+  height: 3px;
+  background: #333;
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+
+.mobile-nav a {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+  color: #333;
+}
+
+/* ================= HERO ================= */
 .hero {
   position: relative;
   height: 70vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
 }
 
 .hero video {
@@ -78,81 +92,35 @@ header img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -2;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.45);
-  z-index: -1;
 }
 
 .hero-text {
-  color: white;
-  text-align: center;
-  padding: 20px;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 }
 
-.hero-text h1 {
-  font-size: 2.7rem;
-  margin-bottom: 15px;
-}
-
-.hero-text p {
-  font-size: 1.25rem;
-}
-
-/* PROMOTIONS GRID */
+/* ================= PROMOTIONS ================= */
 .promotions {
+  max-width: 1200px;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px; /* reduced gap */
+  gap: 10px;
   padding: 60px 20px;
 }
 
-.promo-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-.promo-item {
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  height: 100%;
-  padding: 20px 15px 30px 15px;
-}
-
-.promo-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.promo-item img {
-  width: 100%;
-  height: 300px; /* updated height */
-  object-fit: contain;
-}
-
-.promo-item h3 {
-  margin: 15px 10px 10px;
-  font-size: 1.4rem;
-}
-
-.promo-item p {
-  padding: 0 20px 20px;
-  font-size: 1rem;
-  margin-top: auto;
-}
-
-/* CONTACT */
+/* ================= CONTACT ================= */
 .contact-section {
   background: #E44692;
   color: #fff;
@@ -160,48 +128,7 @@ header img {
   text-align: center;
 }
 
-.contact-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.contact-section form {
-  max-width: 700px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.contact-section label {
-  text-align: left;
-  font-size: 0.9rem;
-}
-
-.contact-section input,
-.contact-section textarea {
-  border: none;
-  border-radius: 5px;
-  padding: 12px;
-  font-size: 1rem;
-}
-
-.contact-section button {
-  padding: 12px;
-  border: none;
-  border-radius: 5px;
-  background: #530883;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.contact-section button:hover {
-  background: #834896;
-}
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer {
   background: #222;
   color: #ccc;
@@ -210,9 +137,12 @@ footer {
 
 .footer-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
+}
+
+/* Desktop footer */
+.footer-desktop {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   gap: 30px;
 }
@@ -223,36 +153,59 @@ footer {
 
 .footer-info p {
   line-height: 1.8;
-  font-size: 0.95rem;
 }
 
-footer a {
-  color: inherit;
-  text-decoration: none;
+.footer-safe img {
+  width: 140px;
 }
 
-footer a:hover {
-  color: #fff;
+/* Mobile footer */
+.footer-mobile-top {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ✅ FIXED: force vertical stacking */
+.footer-core-mobile {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.footer-core-mobile img {
+  width: 160px;
+  margin-bottom: 10px;
 }
 
 .footer-bottom {
   text-align: center;
-  font-size: 0.85rem;
   margin-top: 30px;
   border-top: 1px solid #444;
   padding-top: 15px;
 }
 
-/* Responsive */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
-  .promotions {
-    grid-template-columns: repeat(2, 1fr);
+  .main-nav {
+    display: none;
+  }
+  .burger {
+    display: flex;
   }
 }
 
-@media (max-width: 600px) {
-  .promotions {
-    grid-template-columns: 1fr;
+@media (max-width: 768px) {
+  .footer-desktop {
+    display: none;
+  }
+
+  .footer-mobile-top,
+  .footer-core-mobile {
+    display: flex;
   }
 }
 </style>
@@ -263,14 +216,27 @@ footer a:hover {
 <header>
   <div class="header-inner">
     <img src="images/cfs-logo-narrow.svg" alt="Core Facilities Solutions">
+
     <nav class="main-nav">
       <a href="/index.html">Home</a> |
       <a href="/who-are-we.html">Who Are We</a> |
       <a href="/our-services.html">Our Services</a> |
-            <a href="/lighting-upgrades.html">Lighting Upgrades</a> |
+      <a href="/lighting-upgrades.html">Lighting Upgrades</a> |
       <a href="#contact">Contact</a>
     </nav>
+
+    <div class="burger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
   </div>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="/index.html">Home</a>
+    <a href="/who-are-we.html">Who Are We</a>
+    <a href="/our-services.html">Our Services</a>
+    <a href="/lighting-upgrades.html">Lighting Upgrades</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <section class="hero">
@@ -284,72 +250,68 @@ footer a:hover {
   </div>
 </section>
 
-<section class="promotions" id="services">
-
-  <a href="/who-are-we.html" class="promo-link">
-    <div class="promo-item">
-      <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg" alt="Who we are">
-      <h3>Who are we</h3>
-      <p>Click here for an insight into one of the fastest growing independent wholesalers!</p>
-    </div>
-  </a>
-
-  <a href="/our-services.html" class="promo-link">
-    <div class="promo-item">
-      <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg" alt="Our Services">
-      <h3>Our Services</h3>
-      <p>Click here to see how we supply the FM industry!</p>
-    </div>
-  </a>
-
-  <a href="/lighting-upgrades.html" class="promo-link">
-    <div class="promo-item">
-      <img src="images/Icons-46-Lighting-icon.png" alt="Lighting upgrades">
-      <h3>Lighting upgrades & refurbishments</h3>
-      <p>Click here for all things lighting! including TM65 & TM66 specialists</p>
-    </div>
-  </a>
-
-</section>
-
 <section class="contact-section" id="contact">
   <h2>Contact Us</h2>
   <form action="https://formspree.io/f/xzznajdr" method="POST">
-    <label for="name">Your Name</label>
-    <input id="name" name="name" type="text" required>
-
-    <label for="email">Your Email</label>
-    <input id="email" name="email" type="email" required>
-
-    <label for="message">Message</label>
-    <textarea id="message" name="message" required></textarea>
-
+    <input name="name" placeholder="Your Name" required>
+    <input name="email" type="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Message" required></textarea>
     <button type="submit">Send Message</button>
   </form>
 </section>
 
 <footer>
   <div class="footer-container">
-    <div class="footer-logo">
-      <img src="images/cfs-logo-narrow-white.png" alt="Core Facilities Solutions Logo">
+
+    <!-- Desktop -->
+    <div class="footer-desktop">
+      <div class="footer-logo">
+        <img src="images/cfs-logo-narrow-white.png">
+        <p>Electrical Supply & Installation Experts</p>
+      </div>
+
+      <div class="footer-info">
+        <p>📞 0208 153 0076</p>
+        <p>✉️ sales@cfs.ltd</p>
+        <p>📍 CEME Innovation Centre, Rainham, Essex</p>
+      </div>
+
+      <div class="footer-safe">
+        <img src="images/safe-supplier-verified-logo.png">
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="footer-mobile-top">
+      <div class="footer-info">
+        <p>📞 0208 153 0076</p>
+        <p>✉️ sales@cfs.ltd</p>
+        <p>📍 CEME Innovation Centre, Rainham, Essex</p>
+      </div>
+
+      <div class="footer-safe">
+        <img src="images/safe-supplier-verified-logo.png">
+      </div>
+    </div>
+
+    <div class="footer-core-mobile">
+      <img src="images/cfs-logo-narrow-white.png">
       <p>Electrical Supply & Installation Experts</p>
     </div>
 
-    <div class="footer-info">
-      <p>📞 0208 153 0076</p>
-      <p>✉️ <a href="mailto:sales@cfs.ltd">sales@cfs.ltd</a></p>
-      <p>📍 CEME Innovation Centre, Rainham, Essex</p>
+    <div class="footer-bottom">
+      &copy; 2025 Core Facilities Solutions. All Rights Reserved.
     </div>
 
-    <div class="footer-logo">
-      <img src="images/safe-supplier-verified-logo.png" alt="Safe Supplier Verified">
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    &copy; 2025 Core Facilities Solutions. All Rights Reserved.
   </div>
 </footer>
+
+<script>
+function toggleNav() {
+  const nav = document.getElementById("mobileNav");
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+}
+</script>
 
 </body>
 </html>
