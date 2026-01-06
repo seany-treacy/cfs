@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lighting Upgrades & Refurbishments | Core Facilities Solutions</title>
+<title>Lighting Upgrades | Core Facilities Solutions</title>
 <link rel="stylesheet" href="https://use.typekit.net/ixy7nbi.css">
 
 <style>
@@ -89,7 +89,6 @@ header img {
 .hero-text {
   color: #fff;
   text-align: center;
-  padding: 0 20px;
 }
 
 .hero-text h1 {
@@ -100,77 +99,62 @@ header img {
   font-size: 1.25rem;
 }
 
-/* CONTENT */
-.content {
+/* SECTION CARDS */
+.section-card {
   max-width: 1100px;
   margin: 60px auto;
-  padding: 0 20px;
-}
-
-.content h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #530883;
-}
-
-.content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 25px;
-  color: #555;
-}
-
-/* TABS */
-.tabs {
-  margin-top: 40px;
-}
-
-.tab-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.tab-buttons button {
-  padding: 10px 20px;
-  background: #E44692;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.tab-buttons button.active {
-  background: #530883;
-}
-
-.tab-content {
-  display: none;
-  padding: 20px;
+  padding: 40px 20px;
   background: #f9f9f9;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
-.tab-content.active {
-  display: block;
+.section-card h2 {
+  font-size: 2rem;
+  color: #530883;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.tab-content h3 {
+.section-card ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.section-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.tick {
   color: #E44692;
-  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  flex-shrink: 0;
 }
 
-.tab-content ul {
-  margin: 15px 0;
-  padding-left: 20px;
+.section-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  color: #E44692;
 }
 
-.tab-content li {
-  margin-bottom: 10px;
+.section-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* INFO PARAGRAPH (beneath TM65 & TM66, before contact form) */
+.info-text {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #555;
 }
 
 /* CONTACT */
@@ -201,25 +185,18 @@ header img {
 
 .contact-section input,
 .contact-section textarea {
-  border: none;
-  border-radius: 5px;
   padding: 12px;
-  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
 }
 
 .contact-section button {
   padding: 12px;
-  border: none;
-  border-radius: 5px;
   background: #530883;
   color: #fff;
-  font-weight: bold;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.contact-section button:hover {
-  background: #834896;
 }
 
 /* FOOTER */
@@ -238,22 +215,8 @@ footer {
   justify-content: space-between;
 }
 
-.footer-logo img {
+.footer-container img {
   width: 180px;
-}
-
-.footer-info p {
-  line-height: 1.8;
-  font-size: 0.95rem;
-}
-
-footer a {
-  color: inherit;
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: #fff;
 }
 
 .footer-bottom {
@@ -264,20 +227,9 @@ footer a:hover {
   padding-top: 15px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .tab-buttons {
-    flex-direction: column;
-  }
-
+@media (max-width: 768px) {
   .hero-text h1 {
     font-size: 2rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .tab-buttons button {
-    width: 100%;
   }
 }
 </style>
@@ -303,71 +255,128 @@ footer a:hover {
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-text">
-    <h1>Lighting Upgrades & Refurbishments</h1>
-    <p>TM65 & TM66 specialists — energy-efficient lighting solutions</p>
+    <h1>Lighting Upgrades</h1>
+    <p>Expert LED and TM65/TM66 services for commercial and industrial sites</p>
   </div>
 </section>
 
-<section class="content">
+<!-- Intro Text with anchors -->
+<section class="info-text">
   <p>
-    At Core Facilities Solutions, we specialize in lighting! Whether you are carrying out a full LED upgrade of your building or simply replacing a downlight, we are your go-to supplier. With years of hands-on experience across commercial, healthcare, education, and industrial facilities, we truly know lighting — from survey and design to supporting maintenance and compliance. Over time, we’ve built a strong and reliable supply chain featuring leading component manufacturers such as Tridonic, Osram, Vossloh-Schwabe, and more, ensuring you get the right products for performance, efficiency, and longevity.
+    At Core Facilities Solutions, we specialize in lighting! Whether you are carrying out a full LED upgrade of your building or simply replacing a downlight, we are your go-to supplier. With years of hands-on experience across commercial, healthcare, education, and industrial facilities, we truly know lighting — from survey and design to supporting maintenance and compliance.<br>
+    <br>
   </p>
-
   <p>
-    <strong>‘Are you looking to replace your existing fittings with new luminaires? Click here’</strong><br>
-    <strong>‘Refurbishing or repairing your fittings? Click here’</strong>
+    ‘Are you looking to replace your existing fittings with new luminaires? <a href="#led-upgrades">Click here</a>’<br>
+    ‘Refurbishing or repairing your fittings? <a href="#tm65-tm66">Click here</a>’
   </p>
-
-  <div class="tabs">
-    <div class="tab-buttons">
-      <button class="active" data-tab="led">LED Lighting Upgrades</button>
-      <button data-tab="tm">TM65 & TM66 Compliance</button>
-    </div>
-
-    <div id="led" class="tab-content active">
-      <h3>LED Lighting Upgrades</h3>
-      <p>
-        At Core Facilities Solutions, we provide a fully managed LED lighting upgrade service designed to reduce energy consumption, improve lighting quality, and deliver long-term savings. Whether you’re upgrading a commercial building, school, hospital, data centre, or sports venue, CFS offers everything you need for a smooth, efficient transition to LED.
-      </p>
-      <h3>Why Choose CFS for Your LED Lighting Upgrade?</h3>
-      <ul>
-        <li>✔ <strong>Free Site Surveys:</strong> Our lighting specialists assess your installation free of charge.</li>
-        <li>✔ <strong>Expert Product Guidance:</strong> Trusted brands like Tridonic, Osram, and Vossloh-Schwabe.</li>
-        <li>✔ <strong>ROI & Energy Reduction Reports:</strong> Understand cost savings, payback periods, and benefits.</li>
-        <li>✔ <strong>Professional Commissioning:</strong> Full installation, configuration, and commissioning services.</li>
-        <li>✔ <strong>Responsible Waste Removal:</strong> Full waste removal and recycling across London & SE UK.</li>
-      </ul>
-    </div>
-
-    <div id="tm" class="tab-content">
-      <h3>TM65 & TM66 Lighting Compliance, Repairs & Refurbishments</h3>
-      <p>
-        At Core Facilities Solutions, we ensure your lighting is safe, efficient, and compliant with TM65 (Emergency Lighting Testing & Maintenance) and TM66 (Replacement Lamps & Luminaires) standards.
-      </p>
-      <ul>
-        <li>✔ <strong>Full Compliance:</strong> All work meets regulations & includes 5-year warranty.</li>
-        <li>✔ <strong>Carbon Footprint Reduction:</strong> Refurbishing components reduces landfill and saves resources.</li>
-        <li>✔ <strong>High-Quality Repairs & Refurbishments:</strong> Restore faulty luminaires quickly using trusted brands.</li>
-        <li>✔ <strong>Cost-Effective Solutions:</strong> Refurbishing existing fittings can be more economical than replacements.</li>
-        <li>✔ <strong>Fast, Efficient Turnaround:</strong> Minimized downtime with quick sourcing of parts and materials.</li>
-      </ul>
-    </div>
-  </div>
-
-  <p>For more information, or any questions, contact us: <strong>Sales@cfs.ltd</strong> or call 0208 153 0076.</p>
 </section>
 
+<!-- LED Lighting Upgrades Section -->
+<section class="section-card" id="led-upgrades">
+  <h2>LED Lighting Upgrades</h2>
+  <ul>
+    <li>
+      <span class="tick">✔</span>
+      <div>
+        <h3>Free Site Surveys:</h3>
+        <p>Our lighting specialists will visit your site, assess your existing installation, and identify the most effective upgrade strategy — completely free of charge.</p>
+      </div>
+    </li>
+    <li>
+      <span class="tick">✔</span>
+      <div>
+        <h3>Expert Product Guidance:</h3>
+        <p>With decades of experience and a strong supply chain built around trusted brands like Tridonic, Osram, and Vossloh-Schwabe, we ensure you receive the right products for performance, reliability, and compliance.</p>
+      </div>
+    </li>
+    <li>
+      <span class="tick">✔</span>
+      <div>
+        <h3>ROI & Energy Reduction Reports:</h3>
+        <p>We provide detailed return-on-investment and energy-saving reports, helping you understand cost savings, payback periods, and long-term financial benefits of switching to LED.</p>
+      </div>
+    </li>
+    <li>
+      <span class="tick">✔</span>
+      <div>
+        <h3>Professional Commissioning:</h3>
+        <p>We work closely with the likes of Simmtronic & others to ensure your new lighting system is installed, configured, and commissioned correctly to meet design specifications and maximize performance.</p>
+      </div>
+    </li>
+    <li>
+      <span class="tick">✔</span>
+      <div>
+        <h3>Responsible Waste Removal:</h3>
+        <p>We offer full waste removal and recycling of old lighting equipment, ensuring compliance with environmental standards and hassle-free disposal. Coverage includes London & the South-East of the UK. For other areas, contact our team.</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- TM65 & TM66 Section -->
+<section class="section-card" id="tm65-tm66">
+  <h2>TM65 & TM66 Lighting Compliance, Repairs & Refurbishments</h2>
+  <ul>
+    <li>
+      <span class="tick">✔</span>
+      <div>
+        <h3>Full Compliance:</h3>
+        <p>All work is carried out in line with the latest regulations and industry best practice, and comes with a minimum 5-year warranty.</p>
+      </div>
+    </li>
+    <li>
+      <span class="tick">✔</span>
+      <div>
+        <h3>Carbon Footprint Reduction:</h3>
+        <p>By refurbishing and responsibly reusing lighting components, we minimize waste going to landfill while conserving valuable resources. Extending the life of existing equipment helps our clients reduce their carbon footprint, stay environmentally compliant, and support a more sustainable future.</p>
+      </div>
+    </li>
+    <li>
+      <span class="tick">✔</span>
+      <div>
+        <h3>High-Quality Repairs & Refurbishments:</h3>
+        <p>From faulty emergency lights to worn-out luminaires, we restore your systems quickly and reliably, using trusted household premium brands to ensure performance, longevity, and compliance.</p>
+      </div>
+    </li>
+    <li>
+      <span class="tick">✔</span>
+      <div>
+        <h3>Cost-Effective Solutions:</h3>
+        <p>Refurbishing existing fittings often provides a smarter, more economical alternative to purchasing premium replacements.</p>
+      </div>
+    </li>
+    <li>
+      <span class="tick">✔</span>
+      <div>
+        <h3>Fast, Efficient Turnaround:</h3>
+        <p>Downtime is costly, so we prioritize speed without compromising quality. Our strong working relationships with trusted suppliers allow us to source parts and materials quickly, maintaining your building’s aesthetic integrity.</p>
+        <p>&nbsp;</p>
+<p>Whether you’re managing a commercial building, healthcare facility, school, or sports venue, our TM65 &amp; TM66 expertise gives you peace of mind that your lighting systems are safe, efficient, and fully compliant.&nbsp;</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- Paragraph info-text above contact form -->
+<section class="info-text">
+  <p>
+    For more information, or for any questions, please get in touch with us on: Sales@cfs.ltd or call one of our friendly team: 0208 153 0076.
+  </p>
+</section>
+
+<!-- CONTACT -->
 <section class="contact-section" id="contact">
   <h2>Contact Us</h2>
   <form action="https://formspree.io/f/xzznajdr" method="POST">
     <label for="name">Your Name</label>
-    <input id="name" name="name" type="text" placeholder="Your Name" required>
+    <input id="name" name="name" type="text" required>
 
     <label for="email">Your Email</label>
-    <input id="email" name="email" type="email" placeholder="Your Email" required>
+    <input id="email" name="email" type="email" required>
 
     <label for="message">Message</label>
-    <textarea id="message" name="message" placeholder="Type your message here…" required></textarea>
+    <textarea id="message" name="message" required></textarea>
 
     <button type="submit">Send Message</button>
   </form>
@@ -375,40 +384,26 @@ footer a:hover {
 
 <footer>
   <div class="footer-container">
-    <div class="footer-logo">
-      <img src="images/cfs-logo-narrow-white.png" alt="Core Facilities Solutions Logo">
+    <div>
+      <img src="images/cfs-logo-narrow-white.png" alt="Core Facilities Solutions logo">
       <p>Electrical Supply & Installation Experts</p>
     </div>
 
-    <div class="footer-info">
+    <div>
       <p>📞 0208 153 0076</p>
       <p>✉️ <a href="mailto:sales@cfs.ltd">sales@cfs.ltd</a></p>
       <p>📍 CEME Innovation Centre, Rainham, Essex</p>
     </div>
 
-    <div class="footer-logo">
+    <div>
       <img src="images/safe-supplier-verified-logo.png" alt="Safe Supplier Verified">
     </div>
   </div>
 
   <div class="footer-bottom">
-    &copy; 2025 Core Facilities Solutions. All Rights Reserved.
+    © 2025 Core Facilities Solutions. All Rights Reserved.
   </div>
 </footer>
-
-<script>
-const buttons = document.querySelectorAll('.tab-buttons button');
-const contents = document.querySelectorAll('.tab-content');
-
-buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    buttons.forEach(b => b.classList.remove('active'));
-    contents.forEach(c => c.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById(btn.dataset.tab).classList.add('active');
-  });
-});
-</script>
 
 </body>
 </html>
