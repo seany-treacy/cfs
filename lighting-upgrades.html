@@ -20,30 +20,29 @@ body {
   color: #333;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header {
-  display: flex;
-  justify-content: center;
-  padding: 15px 40px;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .header-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 40px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  justify-content: space-between;
 }
 
 header img {
   width: 280px;
 }
 
-/* NAV */
+/* ================= NAV ================= */
 .main-nav {
   display: flex;
   gap: 12px;
@@ -60,7 +59,36 @@ header img {
   color: #E44692;
 }
 
-/* HERO */
+/* Burger */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 28px;
+  height: 3px;
+  background: #E44692;
+}
+
+/* Mobile Nav */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+
+.mobile-nav a {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+  color: #333;
+}
+
+/* ================= HERO ================= */
 .hero {
   position: relative;
   height: 60vh;
@@ -87,19 +115,21 @@ header img {
 }
 
 .hero-text {
+  position: relative;
   color: #fff;
   text-align: center;
 }
 
 .hero-text h1 {
   font-size: 2.7rem;
+  margin-bottom: 10px;
 }
 
 .hero-text p {
   font-size: 1.25rem;
 }
 
-/* SECTION CARDS */
+/* ================= SECTION CARDS ================= */
 .section-card {
   max-width: 1100px;
   margin: 60px auto;
@@ -146,7 +176,7 @@ header img {
   margin-bottom: 0;
 }
 
-/* INFO PARAGRAPH (beneath TM65 & TM66, before contact form) */
+/* INFO PARAGRAPH */
 .info-text {
   max-width: 1100px;
   margin: 30px auto;
@@ -157,7 +187,7 @@ header img {
   color: #555;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
 .contact-section {
   background: #E44692;
   color: #fff;
@@ -190,6 +220,10 @@ header img {
   border: none;
 }
 
+.contact-section textarea {
+  min-height: 140px;
+}
+
 .contact-section button {
   padding: 12px;
   background: #530883;
@@ -197,9 +231,15 @@ header img {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-/* FOOTER */
+.contact-section button:hover {
+  background: #834896;
+}
+
+/* ================= FOOTER ================= */
 footer {
   background: #222;
   color: #ccc;
@@ -209,14 +249,35 @@ footer {
 .footer-container {
   max-width: 1200px;
   margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: space-between;
 }
 
-.footer-container img {
+.footer-desktop {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-logo img {
   width: 180px;
+}
+
+.footer-safe img {
+  width: 140px;
+}
+
+.footer-info p {
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.footer-mobile-top,
+.footer-core-mobile {
+  display: none;
+}
+
+.footer-core-mobile img {
+  width: 160px;
+  margin-bottom: 10px;
 }
 
 .footer-bottom {
@@ -227,9 +288,29 @@ footer {
   padding-top: 15px;
 }
 
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .main-nav { display: none; }
+  .burger { display: flex; }
+}
+
 @media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 2rem;
+  .hero-text h1 { font-size: 2rem; }
+
+  .footer-desktop { display: none; }
+  .footer-mobile-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-core-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
   }
 }
 </style>
@@ -240,14 +321,29 @@ footer {
 <header>
   <div class="header-inner">
     <img src="images/cfs-logo-narrow.svg" alt="Core Facilities Solutions">
+
     <nav class="main-nav">
       <a href="/index.html">Home</a> |
       <a href="/who-are-we.html">Who Are We</a> |
       <a href="/our-services.html">Our Services</a> |
-            <a href="/lighting-upgrades.html">Lighting Upgrades</a> |
+      <a href="/lighting-upgrades.html">Lighting Upgrades</a> |
       <a href="#contact">Contact</a>
     </nav>
+
+    <div class="burger" onclick="toggleNav()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="/index.html">Home</a>
+    <a href="/who-are-we.html">Who Are We</a>
+    <a href="/our-services.html">Our Services</a>
+    <a href="/lighting-upgrades.html">Lighting Upgrades</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <section class="hero">
@@ -261,19 +357,14 @@ footer {
   </div>
 </section>
 
-<!-- Intro Text with anchors -->
 <section class="info-text">
   <p>
-    At Core Facilities Solutions, we specialize in lighting! Whether you are carrying out a full LED upgrade of your building or simply replacing a downlight, we are your go-to supplier. With years of hands-on experience across commercial, healthcare, education, and industrial facilities, we truly know lighting — from survey and design to supporting maintenance and compliance.<br>
-    <br>
-  </p>
-  <p>
+    At Core Facilities Solutions, we specialize in lighting! Whether you are carrying out a full LED upgrade of your building or simply replacing a downlight, we are your go-to supplier. With years of hands-on experience across commercial, healthcare, education, and industrial facilities, we truly know lighting — from survey and design to supporting maintenance and compliance.<br><br>
     ‘Are you looking to replace your existing fittings with new luminaires? <a href="#led-upgrades">Click here</a>’<br>
     ‘Refurbishing or repairing your fittings? <a href="#tm65-tm66">Click here</a>’
   </p>
 </section>
 
-<!-- LED Lighting Upgrades Section -->
 <section class="section-card" id="led-upgrades">
   <h2>LED Lighting Upgrades</h2>
   <ul>
@@ -315,7 +406,6 @@ footer {
   </ul>
 </section>
 
-<!-- TM65 & TM66 Section -->
 <section class="section-card" id="tm65-tm66">
   <h2>TM65 & TM66 Lighting Compliance, Repairs & Refurbishments</h2>
   <ul>
@@ -353,20 +443,18 @@ footer {
         <h3>Fast, Efficient Turnaround:</h3>
         <p>Downtime is costly, so we prioritize speed without compromising quality. Our strong working relationships with trusted suppliers allow us to source parts and materials quickly, maintaining your building’s aesthetic integrity.</p>
         <p>&nbsp;</p>
-<p>Whether you’re managing a commercial building, healthcare facility, school, or sports venue, our TM65 &amp; TM66 expertise gives you peace of mind that your lighting systems are safe, efficient, and fully compliant.&nbsp;</p>
+        <p>Whether you’re managing a commercial building, healthcare facility, school, or sports venue, our TM65 &amp; TM66 expertise gives you peace of mind that your lighting systems are safe, efficient, and fully compliant.&nbsp;</p>
       </div>
     </li>
   </ul>
 </section>
 
-<!-- Paragraph info-text above contact form -->
 <section class="info-text">
   <p>
     For more information, or for any questions, please get in touch with us on: Sales@cfs.ltd or call one of our friendly team: 0208 153 0076.
   </p>
 </section>
 
-<!-- CONTACT -->
 <section class="contact-section" id="contact">
   <h2>Contact Us</h2>
   <form action="https://formspree.io/f/xzznajdr" method="POST">
@@ -385,26 +473,53 @@ footer {
 
 <footer>
   <div class="footer-container">
-    <div>
-      <img src="images/cfs-logo-narrow-white.png" alt="Core Facilities Solutions logo">
+
+    <div class="footer-desktop">
+      <div class="footer-logo">
+        <img src="images/cfs-logo-narrow-white.png" alt="Core Facilities Solutions Logo">
+        <p>Electrical Supply & Installation Experts</p>
+      </div>
+
+      <div class="footer-info">
+        <p>📞 0208 153 0076</p>
+        <p>✉️ sales@cfs.ltd</p>
+        <p>📍 CEME Innovation Centre, Rainham, Essex</p>
+      </div>
+
+      <div class="footer-safe">
+        <img src="images/safe-supplier-verified-logo.png" alt="Safe Supplier Verified">
+      </div>
+    </div>
+
+    <div class="footer-mobile-top">
+      <div class="footer-info">
+        <p>📞 0208 153 0076</p>
+        <p>✉️ sales@cfs.ltd</p>
+        <p>📍 CEME Innovation Centre, Rainham, Essex</p>
+      </div>
+      <div class="footer-safe">
+        <img src="images/safe-supplier-verified-logo.png" alt="Safe Supplier Verified">
+      </div>
+    </div>
+
+    <div class="footer-core-mobile">
+      <img src="images/cfs-logo-narrow-white.png" alt="Core Facilities Solutions Logo">
       <p>Electrical Supply & Installation Experts</p>
     </div>
 
-    <div>
-      <p>📞 0208 153 0076</p>
-      <p>✉️ <a href="mailto:sales@cfs.ltd">sales@cfs.ltd</a></p>
-      <p>📍 CEME Innovation Centre, Rainham, Essex</p>
+    <div class="footer-bottom">
+      &copy; 2025 Core Facilities Solutions. All Rights Reserved.
     </div>
 
-    <div>
-      <img src="images/safe-supplier-verified-logo.png" alt="Safe Supplier Verified">
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    © 2025 Core Facilities Solutions. All Rights Reserved.
   </div>
 </footer>
+
+<script>
+function toggleNav() {
+  const nav = document.getElementById("mobileNav");
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+}
+</script>
 
 </body>
 </html>
