@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Services | Core Facilities Solutions</title>
+<title>Core Facilities Solutions | Electrical Supply & Installation</title>
 <link rel="stylesheet" href="https://use.typekit.net/ixy7nbi.css">
 
 <style>
@@ -43,9 +43,10 @@ header img {
   width: 280px;
 }
 
-/* NAV */
+/* NAVIGATION */
 .main-nav {
   display: flex;
+  align-items: center;
   gap: 12px;
   font-size: 0.95rem;
   letter-spacing: 1px;
@@ -54,6 +55,7 @@ header img {
 .main-nav a {
   text-decoration: none;
   color: #333;
+  transition: 0.3s ease;
 }
 
 .main-nav a:hover {
@@ -63,10 +65,10 @@ header img {
 /* HERO */
 .hero {
   position: relative;
-  height: 60vh;
+  height: 70vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
@@ -87,93 +89,67 @@ header img {
 }
 
 .hero-text {
-  color: #fff;
+  color: white;
   text-align: center;
+  padding: 20px;
 }
 
 .hero-text h1 {
   font-size: 2.7rem;
+  margin-bottom: 15px;
 }
 
 .hero-text p {
   font-size: 1.25rem;
 }
 
-/* INFO TEXT */
-.info-text {
-  max-width: 1100px;
-  margin: 60px auto;
-  padding: 0 20px;
-  text-align: center;
-}
-
-.info-text p {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  color: #555;
-}
-
-/* SERVICES GRID — 3 x 3 */
-.services {
+/* PROMOTIONS GRID */
+.promotions {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  padding: 60px 40px;
-  background: #f9f9f9;
+  gap: 10px; /* reduced gap */
+  padding: 60px 20px;
 }
 
-.service-item {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 20px 15px 30px 15px;
-}
-
-.service-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.service-item img {
-  width: 100%;
-  height: 300px; /* updated height */
-  object-fit: cover;
-}
-
-.service-item h3 {
-  margin: 20px 10px 10px;
-  font-size: 1.4rem;
-}
-
-.service-item p {
-  padding: 0 20px 20px;
-  font-size: 1rem;
-  margin-top: auto;
-}
-
-/* Clickable promo links */
 .promo-link {
   text-decoration: none;
   color: inherit;
   display: block;
 }
 
-/* Responsive fallbacks */
-@media (max-width: 1024px) {
-  .services {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.promo-item {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  padding: 20px 15px 30px 15px;
 }
 
-@media (max-width: 600px) {
-  .services {
-    grid-template-columns: 1fr;
-  }
+.promo-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.promo-item img {
+  width: 100%;
+  height: 300px; /* updated height */
+  object-fit: cover;
+}
+
+.promo-item h3 {
+  margin: 15px 10px 10px;
+  font-size: 1.4rem;
+}
+
+.promo-item p {
+  padding: 0 20px 20px;
+  font-size: 1rem;
+  margin-top: auto;
 }
 
 /* CONTACT */
@@ -225,7 +201,7 @@ header img {
   background: #834896;
 }
 
-/* FOOTER — match index page */
+/* FOOTER */
 footer {
   background: #222;
   color: #ccc;
@@ -234,14 +210,14 @@ footer {
 
 .footer-container {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 30px;
 }
 
-.footer-container img {
+.footer-logo img {
   width: 180px;
 }
 
@@ -266,6 +242,19 @@ footer a:hover {
   border-top: 1px solid #444;
   padding-top: 15px;
 }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .promotions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .promotions {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
 
@@ -289,98 +278,50 @@ footer a:hover {
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-text">
-    <h1>Our Services</h1>
-    <p>Supporting the FM industry with a complete supply solution</p>
+    <h1>Core Facilities Solutions</h1>
+    <p>The FM's wholesale solution</p>
   </div>
 </section>
 
-<section class="info-text">
-  <p>
-    Core Facilities Solutions delivers a comprehensive one-stop supply service to the facilities management sector.
-    From commercial buildings and education sites to healthcare environments, data centres, and stadiums —
-    we provide the products, expertise, and reliability FM teams depend on.
-  </p>
-</section>
+<section class="promotions" id="services">
 
-<section class="services">
-
-  <a href="/electrical.html" class="promo-link">
-    <div class="service-item">
-      <img src="images/Icons-5-electrical-pink.png" alt="Electrical supplies">
-      <h3>Electrical</h3>
-      <p>Commercial and industrial electrical supplies from trusted manufacturers.</p>
+  <a href="/who-are-we.html" class="promo-link">
+    <div class="promo-item">
+      <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg" alt="Who we are">
+      <h3>Who are we</h3>
+      <p>Click here for an insight into one of the fastest growing independent wholesalers!</p>
     </div>
   </a>
 
-  <a href="/mechanical.html" class="promo-link">
-    <div class="service-item">
-      <img src="images/Icons-41-Mechanical.png" alt="Mechanical services supplies">
-      <h3>Mechanical</h3>
-      <p>Mechanical products to support plant rooms and building systems.</p>
+  <a href="/our-services.html" class="promo-link">
+    <div class="promo-item">
+      <img src="https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg" alt="Our Services">
+      <h3>Our Services</h3>
+      <p>Click here to see how we supply the FM industry!</p>
     </div>
   </a>
 
-  <a href="/plumbing.html" class="promo-link">
-    <div class="service-item">
-      <img src="images/Icons-37-Plumbing.png" alt="Plumbing supplies">
-      <h3>Plumbing Supplies</h3>
-      <p>Quality plumbing materials for maintenance and refurbishment projects.</p>
+  <a href="/lighting-upgrades.html" class="promo-link">
+    <div class="promo-item">
+      <img src="images/Icons-46-Lighting-icon.png" alt="Lighting upgrades">
+      <h3>Lighting upgrades & refurbishments</h3>
+      <p>Click here for all things lighting! including TM65 & TM66 specialists</p>
     </div>
   </a>
 
-  <div class="service-item">
-    <img src="images/Icons-33-HVAC.png" alt="HVAC equipment">
-    <h3>HVAC</h3>
-    <p>Heating, ventilation, and air conditioning solutions.</p>
-  </div>
-
-  <div class="service-item">
-    <img src="images/Icons-9-Desk.png" alt="Office equipment">
-    <h3>Office Equipment</h3>
-    <p>Essential office equipment and consumables.</p>
-  </div>
-
-  <div class="service-item">
-    <img src="images/Icons-17-Cleaning.png" alt="Soft services supplies">
-    <h3>Soft Services</h3>
-    <p>Cleaning, janitorial, and hygiene products.</p>
-  </div>
-
-  <div class="service-item">
-    <img src="images/Icons-21-Tools.png" alt="Tool hire and calibration">
-    <h3>Tool Hire & Calibration</h3>
-    <p>Specialist tools and certified calibration services.</p>
-  </div>
-
-  <div class="service-item">
-    <img src="images/Icons-25-recycling.png" alt="Waste removal services">
-    <h3>Waste Removal</h3>
-    <p>Responsible waste removal and recycling solutions.</p>
-  </div>
-
-  <div class="service-item">
-    <img src="images/Icons-29-Fridge.png" alt="White goods supply">
-    <h3>White Goods</h3>
-    <p>Supply and replacement of white goods.</p>
-  </div>
-</section>
-
-<section class="info-text">
-  <p>
-    For more information about any of our services, please contact our team on
-    <strong>0208 153 0076</strong> or email
-    <strong>sales@cfs.ltd</strong>.
-  </p>
 </section>
 
 <section class="contact-section" id="contact">
   <h2>Contact Us</h2>
   <form action="https://formspree.io/f/xzznajdr" method="POST">
-    <input id="name" name="name" type="text" placeholder="Your Name" required>
+    <label for="name">Your Name</label>
+    <input id="name" name="name" type="text" required>
 
-    <input id="email" name="email" type="email" placeholder="Your Email" required>
+    <label for="email">Your Email</label>
+    <input id="email" name="email" type="email" required>
 
-    <textarea id="message" name="message" placeholder="Type your message here…" required></textarea>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required></textarea>
 
     <button type="submit">Send Message</button>
   </form>
@@ -390,13 +331,13 @@ footer a:hover {
   <div class="footer-container">
     <div class="footer-logo">
       <img src="images/cfs-logo-narrow-white.png" alt="Core Facilities Solutions Logo">
-      <p style="margin-top:10px;">Electrical Supply & Installation Experts</p>
+      <p>Electrical Supply & Installation Experts</p>
     </div>
 
     <div class="footer-info">
-      <p><strong>📞 Telephone:</strong> 0208 153 0076</p>
-      <p><strong>✉️ Email:</strong> <a href="mailto:sales@cfs.ltd">sales@cfs.ltd</a></p>
-      <p><strong>📍 Address:</strong> <a href="https://maps.app.goo.gl/Vq1VBvzEBVqJACjs5">CEME Innovation Centre, Rainham, Essex</a></p>
+      <p>📞 0208 153 0076</p>
+      <p>✉️ <a href="mailto:sales@cfs.ltd">sales@cfs.ltd</a></p>
+      <p>📍 CEME Innovation Centre, Rainham, Essex</p>
     </div>
 
     <div class="footer-logo">
