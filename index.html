@@ -57,7 +57,6 @@ header img {
   color: #E44692;
 }
 
-/* Burger */
 .burger {
   display: none;
   flex-direction: column;
@@ -71,7 +70,6 @@ header img {
   background: #E44692;
 }
 
-/* Mobile Nav */
 .mobile-nav {
   display: none;
   flex-direction: column;
@@ -144,13 +142,12 @@ header img {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  overflow: hidden; /* ensures image stays flush */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-/* 🔑 FLUSH IMAGE */
 .promo-item img {
   width: 100%;
   height: 260px;
@@ -158,7 +155,6 @@ header img {
   display: block;
 }
 
-/* Text padding moved here */
 .promo-content {
   padding: 20px 15px 30px;
   text-align: center;
@@ -167,14 +163,15 @@ header img {
   height: 100%;
 }
 
+/* 🔑 SPACING FIX HERE */
 .promo-content h3 {
   margin: 0 0 4px;
   font-size: 1.4rem;
 }
 
 .promo-content p {
+  margin: 0;
   font-size: 1rem;
-	margin: 20px
 }
 
 /* ================= CONTACT ================= */
@@ -285,30 +282,13 @@ footer {
 
 @media (max-width: 768px) {
   .promotions { grid-template-columns: 1fr; }
-
   .footer-desktop { display: none; }
-
-  .footer-mobile-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .footer-core-mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 30px;
-  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- PROMO SECTION -->
 <section class="promotions">
   <a href="/who-are-we.html" class="promo-link">
     <div class="promo-item">
@@ -334,12 +314,4 @@ footer {
     <div class="promo-item">
       <img src="images/Icons-46-Lighting-icon.png">
       <div class="promo-content">
-        <h3>Lighting upgrades &amp; refurbishments</h3>
-        <p>Click here for all things lighting! including TM65 &amp; TM66 specialists</p>
-      </div>
-    </div>
-  </a>
-</section>
-
-</body>
-</html>
+        <h3>Ligh
