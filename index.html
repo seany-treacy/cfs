@@ -144,6 +144,22 @@ header img {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden; /* ensures image stays flush */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 🔑 FLUSH IMAGE */
+.promo-item img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Text padding moved here */
+.promo-content {
   padding: 20px 15px 30px;
   text-align: center;
   display: flex;
@@ -151,20 +167,14 @@ header img {
   height: 100%;
 }
 
-.promo-item img {
-  width: 100%;
-  height: 300px;
-  object-fit: contain;
-}
-
-.promo-item h3 {
-  margin: 15px 0 10px;
+.promo-content h3 {
+  margin: 0 0 4px;
   font-size: 1.4rem;
 }
 
-.promo-item p {
+.promo-content p {
   font-size: 1rem;
-  margin-top: auto;
+	margin: 20px
 }
 
 /* ================= CONTACT ================= */
@@ -298,132 +308,38 @@ footer {
 
 <body>
 
-<header>
-  <div class="header-inner">
-    <img src="images/cfs-logo-narrow.svg" alt="Core Facilities Solutions">
-
-    <nav class="main-nav">
-      <a href="/index.html">Home</a> |
-      <a href="/who-are-we.html">Who Are We</a> |
-      <a href="/our-services.html">Our Services</a> |
-      <a href="/lighting-upgrades.html">Lighting Upgrades</a> |
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="burger" onclick="toggleNav()">
-      <span></span><span></span><span></span>
-    </div>
-  </div>
-
-  <nav class="mobile-nav" id="mobileNav">
-    <a href="/index.html">Home</a>
-    <a href="/who-are-we.html">Who Are We</a>
-    <a href="/our-services.html">Our Services</a>
-    <a href="/lighting-upgrades.html">Lighting Upgrades</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <video autoplay muted loop playsinline>
-    <source src="images/istockphoto-2205039420-640_adpp_is.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-text">
-    <h1>Core Facilities Solutions</h1>
-    <p>The FM's wholesale solution</p>
-  </div>
-</section>
-
-<!-- ✅ PROMOTIONS RESTORED -->
+<!-- PROMO SECTION -->
 <section class="promotions">
   <a href="/who-are-we.html" class="promo-link">
     <div class="promo-item">
       <img src="images/people-icon.png">
-      <h3>Who Are We</h3>
-      <p>Click here for an insight into one of the fastest growing independent wholesalers!</p>
+      <div class="promo-content">
+        <h3>Who Are We</h3>
+        <p>Click here for an insight into one of the fastest growing independent wholesalers!</p>
+      </div>
     </div>
   </a>
 
   <a href="/our-services.html" class="promo-link">
     <div class="promo-item">
       <img src="images/van-icon.png">
-      <h3>Our Services</h3>
-      <p>Click here to see how we supply the FM industry!</p>
+      <div class="promo-content">
+        <h3>Our Services</h3>
+        <p>Click here to see how we supply the FM industry!</p>
+      </div>
     </div>
   </a>
 
   <a href="/lighting-upgrades.html" class="promo-link">
     <div class="promo-item">
       <img src="images/Icons-46-Lighting-icon.png">
-      <h3>Lighting upgrades & refurbishments</h3>
-      <p>Click here for all things lighting! including TM65 & TM66 specialists</p>
+      <div class="promo-content">
+        <h3>Lighting upgrades &amp; refurbishments</h3>
+        <p>Click here for all things lighting! including TM65 &amp; TM66 specialists</p>
+      </div>
     </div>
   </a>
 </section>
-
-<section class="contact-section" id="contact">
-  <h2>Contact Us</h2>
-  <form action="https://formspree.io/f/xzznajdr" method="POST">
-    <label>Your Name</label>
-    <input name="name" required>
-    <label>Your Email</label>
-    <input type="email" name="email" required>
-    <label>Message</label>
-    <textarea name="message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-
-<footer>
-  <div class="footer-container">
-
-    <div class="footer-desktop">
-      <div class="footer-logo">
-        <img src="images/cfs-logo-narrow-white.png">
-        <p>Electrical Supply & Installation Experts</p>
-      </div>
-
-      <div class="footer-info">
-        <p>📞 0208 153 0076</p>
-        <p>✉️ sales@cfs.ltd</p>
-        <p>📍 CEME Innovation Centre, Rainham, Essex</p>
-      </div>
-
-      <div class="footer-safe">
-        <img src="images/safe-supplier-verified-logo.png">
-      </div>
-    </div>
-
-    <div class="footer-mobile-top">
-      <div class="footer-info">
-        <p>📞 0208 153 0076</p>
-        <p>✉️ sales@cfs.ltd</p>
-        <p>📍 CEME Innovation Centre, Rainham, Essex</p>
-      </div>
-      <div class="footer-safe">
-        <img src="images/safe-supplier-verified-logo.png">
-      </div>
-    </div>
-
-    <div class="footer-core-mobile">
-      <img src="images/cfs-logo-narrow-white.png">
-      <p>Electrical Supply & Installation Experts</p>
-    </div>
-
-    <div class="footer-bottom">
-      &copy; 2025 Core Facilities Solutions. All Rights Reserved.
-    </div>
-
-  </div>
-</footer>
-
-<script>
-function toggleNav() {
-  const nav = document.getElementById("mobileNav");
-  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
-}
-</script>
 
 </body>
 </html>
