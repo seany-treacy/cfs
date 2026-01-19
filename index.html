@@ -57,7 +57,6 @@ header img {
   color: #E44692;
 }
 
-/* Burger */
 .burger {
   display: none;
   flex-direction: column;
@@ -71,7 +70,6 @@ header img {
   background: #E44692;
 }
 
-/* Mobile Nav */
 .mobile-nav {
   display: none;
   flex-direction: column;
@@ -165,7 +163,6 @@ header img {
   height: 100%;
 }
 
-/* 🔑 REDUCED SPACING */
 .promo-content h3 {
   margin: 0 0 4px;
   font-size: 1.4rem;
@@ -254,16 +251,6 @@ footer {
   line-height: 1.8;
 }
 
-.footer-mobile-top,
-.footer-core-mobile {
-  display: none;
-}
-
-.footer-core-mobile img {
-  width: 160px;
-  margin-bottom: 10px;
-}
-
 .footer-bottom {
   text-align: center;
   font-size: 0.85rem;
@@ -293,9 +280,10 @@ footer {
 
 <header>
   <div class="header-inner">
-<a href="/index.html">
-  <img src="images/CFS-logo-2-wordmark-nobackground.svg" alt="Core Facilities Solutions">
-</a>
+    <a href="/index.html">
+      <img src="images/CFS-logo-2-wordmark-nobackground.svg" alt="Core Facilities Solutions">
+    </a>
+
     <nav class="main-nav">
       <a href="/index.html">Home</a> |
       <a href="/who-are-we.html">Who Are We</a> |
@@ -363,20 +351,28 @@ footer {
 
 <section class="contact-section" id="contact">
   <h2>Contact Us</h2>
-  <form action="https://formspree.io/f/xojjjqav" method="POST">
+
+  <p id="form-success" style="display:none; margin-bottom:15px;">
+    ✅ Thank you — your message has been sent successfully.
+  </p>
+
+  <form id="contact-form" action="https://formspree.io/f/xojjjqav" method="POST">
     <label>Your Name</label>
     <input name="name" required>
+
     <label>Your Email</label>
     <input type="email" name="email" required>
+
     <label>Message</label>
     <textarea name="message" required></textarea>
+
+    <input type="text" name="_gotcha" style="display:none">
     <button type="submit">Send Message</button>
   </form>
 </section>
 
 <footer>
   <div class="footer-container">
-
     <div class="footer-desktop">
       <div class="footer-logo">
         <img src="images/cfs-logo-narrow-white.png">
@@ -394,26 +390,9 @@ footer {
       </div>
     </div>
 
-    <div class="footer-mobile-top">
-      <div class="footer-info">
-        <p>📞 0208 153 0076</p>
-        <p>✉️ sales@cfs.ltd</p>
-        <p>📍 CEME Innovation Centre, Rainham, Essex</p>
-      </div>
-      <div class="footer-safe">
-        <img src="images/safe-supplier-verified-logo.png">
-      </div>
-    </div>
-
-    <div class="footer-core-mobile">
-      <img src="images/cfs-logo-narrow-white.png">
-      <p>Electrical Supply & Installation Experts</p>
-    </div>
-
     <div class="footer-bottom">
       &copy; 2025 Core Facilities Solutions. All Rights Reserved.
     </div>
-
   </div>
 </footer>
 
@@ -422,6 +401,28 @@ function toggleNav() {
   const nav = document.getElementById("mobileNav");
   nav.style.display = nav.style.display === "flex" ? "none" : "flex";
 }
+
+const form = document.getElementById("contact-form");
+const success = document.getElementById("form-success");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+    headers: { "Accept": "application/json" }
+  }).then(res => {
+    if (res.ok) {
+      form.reset();
+      success.style.display = "block";
+    } else {
+      alert("Message failed to send. Please try again.");
+    }
+  }).catch(() => {
+    alert("Message failed to send. Please try again.");
+  });
+});
 </script>
 
 </body>
