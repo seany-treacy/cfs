@@ -412,14 +412,16 @@ form.addEventListener("submit", function(e) {
     method: "POST",
     body: new FormData(form),
     headers: { "Accept": "application/json" }
-  }).then(res => {
-    if (res.ok) {
+  })
+  .then(res => {
+    if (res.status === 200 || res.status === 302) {
       form.reset();
       success.style.display = "block";
     } else {
-      alert("Message failed to send. Please try again.");
+      throw new Error("Formspree error");
     }
-  }).catch(() => {
+  })
+  .catch(() => {
     alert("Message failed to send. Please try again.");
   });
 });
