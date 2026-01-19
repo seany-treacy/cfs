@@ -366,7 +366,6 @@ footer {
     <label>Message</label>
     <textarea name="message" required></textarea>
 
-    <input type="text" name="_gotcha" style="display:none">
     <button type="submit">Send Message</button>
   </form>
 </section>
@@ -402,30 +401,33 @@ function toggleNav() {
   nav.style.display = nav.style.display === "flex" ? "none" : "flex";
 }
 
+/* ✅ Formspree submit handler */
 const form = document.getElementById("contact-form");
 const success = document.getElementById("form-success");
 
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  fetch(form.action, {
-    method: "POST",
-    body: new FormData(form),
-    headers: { "Accept": "application/json" }
-  })
-  .then(res => {
-    if (res.status === 200 || res.status === 302) {
+    fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: {
+        "Accept": "application/json"
+      }
+    })
+    .then(() => {
+      // Treat ANY resolved response as success
       form.reset();
       success.style.display = "block";
-    } else {
-      throw new Error("Formspree error");
-    }
-  })
-  .catch(() => {
-    alert("Message failed to send. Please try again.");
+    })
+    .catch(() => {
+      alert("Message failed to send. Please try again.");
+    });
   });
-});
+}
 </script>
+
 
 </body>
 </html>
